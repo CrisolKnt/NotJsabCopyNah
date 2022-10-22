@@ -58,7 +58,7 @@ public class SmallerBallSpawn : MonoBehaviour
    IEnumerator shoot_ball()
     {
         //make big ball go up with warning, go white then explode into 16 smaller pieces on all ways. made to be reusable by instancing big ball.
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSecondsRealtime(delay);
         float angleMath = (float) 16;
         float angle_offset = 360 / angleMath;
         float angle = Random.value * 20;

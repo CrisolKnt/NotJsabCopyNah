@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class conesaler_script : MonoBehaviour
+public class conelaser_script : MonoBehaviour
 {
     Transform mainCone;
+    public static float public_delay_cone;
     GameObject[] amountofcopies;
    
 
@@ -14,13 +15,13 @@ public class conesaler_script : MonoBehaviour
         if (amountofcopies.Length != 1)
         {
             mainCone = gameObject.transform;
-            StartCoroutine(cone_functions());
+            StartCoroutine(cone_functions(public_delay_cone));
         }
     }
     
-    IEnumerator cone_functions()
+    IEnumerator cone_functions(float delay = 0)
     {
-        yield return new WaitForSecondsRealtime(2.5f);
+        yield return new WaitForSecondsRealtime(2.5f + delay);
         mainCone.position = transform.parent.GetChild(1).position;
 
         for(int x = 0; x < 10;x++)
