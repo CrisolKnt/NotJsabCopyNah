@@ -12,7 +12,7 @@ public class SmallerBallSpawn : MonoBehaviour
     float delay;
     bool isOriginal = false;
     GameObject[] amountofcopies;
-    private void Awake()
+    private void Start()
     {
         delay = publicdelay;
         amountofcopies = GameObject.FindGameObjectsWithTag("popball");
@@ -35,17 +35,17 @@ public class SmallerBallSpawn : MonoBehaviour
     {
 
         warning = GameObject.Instantiate(GameObject.Find("warning"), spawnPos.position + new Vector3(0, 3), spawnPos.rotation);
-        yield return new WaitForSecondsRealtime(1.5f);
+        yield return new WaitForSeconds(1.5f);
         Destroy(warning, 1f);
 
         gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 800);
 
-        yield return new WaitForSecondsRealtime(0.32f);
+        yield return new WaitForSeconds(0.32f);
 
         for(int x = 0; x < 3;x++)
         {
             gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.down * 266.6666666f);
-            yield return new WaitForSecondsRealtime(0.07f);
+            yield return new WaitForSeconds(0.07f);
         }
         
         StartCoroutine(shoot_ball());

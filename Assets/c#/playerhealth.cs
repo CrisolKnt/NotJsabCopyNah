@@ -33,24 +33,22 @@ public class playerhealth : MonoBehaviour
 
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         isColliding = true;
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        isColliding = false;
-    }
 
 
 
     private void Update()
     {
+       
         if(isColliding == true)
         {
             StartCoroutine("lower_health");
         }
+        isColliding = false;
     }
 
 }

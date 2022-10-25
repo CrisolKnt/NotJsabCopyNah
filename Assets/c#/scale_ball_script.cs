@@ -17,7 +17,7 @@ public class scale_ball_script : MonoBehaviour
   
     IEnumerator basemove()
     {
-        yield return new WaitForSecondsRealtime(1.2f);
+        yield return new WaitForSeconds(1.2f);
         transform.position = transform.parent.position;
         for(int x = 0;x < 20;x++)
         {

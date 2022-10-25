@@ -45,6 +45,7 @@ public class playermovement : MonoBehaviour
                 StartCoroutine(dash_timer());
             }
         }
+        body.SetRotation(0);
     }
 
 

@@ -14,7 +14,7 @@ public class LineScript : MonoBehaviour
     }
     IEnumerator warning_spawm(float delay)
     {
-        yield return new WaitForSecondsRealtime(2f + delay);
+        yield return new WaitForSeconds(2f + delay);
         Destroy(warning,1.5f);
         transform.position = transform.parent.GetChild(1).position;
 
@@ -23,7 +23,7 @@ public class LineScript : MonoBehaviour
             for (int x = 0; x < 5;x++)
         {
             transform.localScale += new Vector3(-0.1f, 0, 0);
-            yield return new WaitForSecondsRealtime(0.07f);
+            yield return new WaitForSeconds(0.07f);
         }
         Destroy(transform.parent.gameObject, 0);
 

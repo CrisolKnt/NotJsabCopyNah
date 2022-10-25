@@ -21,7 +21,7 @@ public class conelaser_script : MonoBehaviour
     
     IEnumerator cone_functions(float delay = 0)
     {
-        yield return new WaitForSecondsRealtime(2.5f + delay);
+        yield return new WaitForSeconds(2.5f + delay);
         mainCone.position = transform.parent.GetChild(1).position;
 
         for(int x = 0; x < 10;x++)
@@ -30,7 +30,7 @@ public class conelaser_script : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
         Destroy(transform.parent.GetChild(1).gameObject, 0);
-        yield return new WaitForSecondsRealtime(0.4f);
+        yield return new WaitForSeconds(0.4f);
 
         for (int x = 0; x < 60; x++)
         {
