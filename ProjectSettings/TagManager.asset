@@ -8,6 +8,8 @@ TagManager:
   - popball
   - line
   - coneobj
+  - bullet
+  - blackscreen
   layers:
   - Default
   - TransparentFX

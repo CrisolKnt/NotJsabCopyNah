@@ -17,16 +17,16 @@ public class lines_large_script : MonoBehaviour
    private void Update()
     {
         transform.position += new Vector3(0, speed_of_lines * Time.deltaTime);
-         if(line1.transform.localPosition.y > 10f)
+         if(line1.transform.localPosition.y < 7.5f)
         {
-            line1.transform.position += new Vector3(0, -5);
+            line1.transform.position += new Vector3(0, 5);
         }
 
-         if (speed_of_lines > 1.5f)
+         if (speed_of_lines < -1.5f)
         {
-            speed_of_lines += -1.5f * Time.deltaTime; 
+            speed_of_lines += 1.5f * Time.deltaTime; 
         }
-        if (speed_of_lines > 1.5f && warning != null)
+        if (speed_of_lines  < -1.5f && warning != null)
         {
             Destroy(warning, 0);
         }

@@ -59,7 +59,7 @@ public class SmallerBallSpawn : MonoBehaviour
     {
         //make big ball go up with warning, go white then explode into 16 smaller pieces on all ways. made to be reusable by instancing big ball.
         yield return new WaitForSecondsRealtime(delay);
-        float angleMath = (float) 16;
+        float angleMath = 16;
         float angle_offset = 360 / angleMath;
         float angle = Random.value * 20;
         Vector3 dir = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.right;

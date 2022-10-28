@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class playerhealth : MonoBehaviour
 {
@@ -14,8 +15,19 @@ public class playerhealth : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
     }
 
-
-
+   
+    IEnumerator death()
+    {
+        Image image = GameObject.Find("screen_of_death").GetComponent<Image>();
+        Color fade = image.color;
+        while (Time.timeScale - Time.deltaTime > 0.1)
+        {
+            image.color = new Color(fade.r,fade.g,fade.b,0.3f);
+            Time.timeScale -= Time.deltaTime;
+            yield return new WaitForSeconds(0.5f);
+        }
+        buttons.respawn();
+    }
     IEnumerator lower_health()
     {
         if (dmgIframes == false && iframes == false)
@@ -23,10 +35,10 @@ public class playerhealth : MonoBehaviour
             player_health -= 1;
             Debug.Log("health down");
             dmgIframes = true;
-            sprite.color = new Color(1, 1, 1, 0.5f);
+            sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0.5f);
             yield return new WaitForSeconds(3);
             dmgIframes = false;
-            sprite.color = new Color(1, 1, 1, 1f);
+            sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 1);
         }
         yield return null;
     }
@@ -49,6 +61,10 @@ public class playerhealth : MonoBehaviour
             StartCoroutine("lower_health");
         }
         isColliding = false;
+        if (player_health <= 0)
+        {
+            StartCoroutine(death());
+        }
     }
 
 }

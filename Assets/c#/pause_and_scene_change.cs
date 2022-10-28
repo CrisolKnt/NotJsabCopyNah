@@ -25,7 +25,7 @@ public class pause_and_scene_change : MonoBehaviour
                 {
                     music.Play();
                 }
-                transform.Find("UiCamera").GetChild(0).gameObject.SetActive(false);
+                transform.Find("UiCamera").GetChild(1).gameObject.SetActive(false);
             }
             else
             {
@@ -36,7 +36,7 @@ public class pause_and_scene_change : MonoBehaviour
                 is_paused = true;
                 Time.timeScale = 0;
                 music.Pause();
-                transform.Find("UiCamera").GetChild(0).gameObject.SetActive(true);
+                transform.Find("UiCamera").GetChild(1).gameObject.SetActive(true);
 
             }
         }
