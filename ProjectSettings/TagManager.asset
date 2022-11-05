@@ -10,6 +10,7 @@ TagManager:
   - coneobj
   - bullet
   - blackscreen
+  - triangle
   layers:
   - Default
   - TransparentFX
