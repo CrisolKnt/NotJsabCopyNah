@@ -11,11 +11,11 @@ public class pause_and_scene_change : MonoBehaviour
 
     private void Awake()
     {
-        music = transform.GetChild(1).GetComponent<AudioSource>();
+        music = transform.GetChild(0).GetComponent<AudioSource>();
     }
     void Update()
     {
-        if (Input.GetButtonDown("Cancel"))
+        if (Input.GetKeyDown("p"))       
         {
             if (is_paused)
             {

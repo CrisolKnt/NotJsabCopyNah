@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class tutorial_music_player : MonoBehaviour
 {
@@ -61,6 +62,7 @@ public class tutorial_music_player : MonoBehaviour
                     {
                         Instantiate(triangle, new Vector2(4.5f, 0), Quaternion.identity);
                         trainglehasspawn = true;
+                        GameObject.Find("triangle_to_advance").GetComponent<TextMeshPro>().color += new Color(0,0,0,0.35f);
                     }
                 }
                 if (shouldloop)
@@ -70,7 +72,7 @@ public class tutorial_music_player : MonoBehaviour
                     StartCoroutine(loop1());
                 }
             }
-           // canenablecollision = true;
+            GameObject.Find("remember_to_dash").GetComponent<TextMeshPro>().color += new Color(0, 0, 0, 0.35f);
             shouldloop = true;
             trainglehasspawn = false;
             music.time += 9.51f;
@@ -173,7 +175,7 @@ public class tutorial_music_player : MonoBehaviour
         
         yield return new WaitUntil(() => music.time > 53.02f);
         Instantiate(ballExpo, new Vector2(6, -6), Quaternion.identity);
-
+       
         yield return new WaitUntil(() => music.time > 54.1f);
         line_spawn(1.5f, -6);
 
@@ -182,7 +184,10 @@ public class tutorial_music_player : MonoBehaviour
 
         yield return new WaitUntil(() => music.time > 56.8f);
         line_spawn(0, -6);
-      
+
+        GameObject.Find("remember_to_dash").GetComponent<TextMeshPro>().color = new Color(0, 0, 0, 0);
+
+
         yield return new WaitUntil(() => music.time > 57.72f);
         Instantiate(ballExpo, new Vector2(6, -6), Quaternion.identity);
 

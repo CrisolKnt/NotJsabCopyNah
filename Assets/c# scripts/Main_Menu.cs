@@ -31,7 +31,13 @@ public class Main_Menu : MonoBehaviour
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
     }
 
-
+    public void LoadLevel2()
+    {
+        static_variable.time_played = 0;
+        static_variable.times_ded = 0;
+        SceneManager.LoadScene("level2Boss");
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+    }
     public void Volume(float volume)
     {
         volumemaster = volume;

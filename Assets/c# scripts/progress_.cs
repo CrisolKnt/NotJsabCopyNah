@@ -5,13 +5,15 @@ using UnityEngine.UI;
 
 public class progress_ : MonoBehaviour
 {
+    public float value;
+    public float musicoffset = 0;
     float alpha = 1;
     private void Update()
     {
         if (gameObject.transform.localPosition.x < 2350)
 
         {
-            gameObject.transform.localPosition = new Vector3(LevelEvents.time * 39.166f, 0);
+            gameObject.transform.localPosition = new Vector3(GameObject.Find("levelPlayer").GetComponent<AudioSource>().time * value, 0);
         }
         else
         {

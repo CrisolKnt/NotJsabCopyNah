@@ -37,7 +37,7 @@ public class LevelEvents : MonoBehaviour
     
     private void Awake()
     {
-        checkpoint = 2;// static_variable.checkpointtoload;
+        checkpoint = static_variable.checkpointtoload;
         Time.timeScale = 0;
         time = 0;
         bullet = GameObject.Find("projectile");
@@ -77,7 +77,7 @@ public class LevelEvents : MonoBehaviour
         GameObject obj1 = GameObject.Find("spawner");
         GameObject obj2 = GameObject.Find("spawner (1)");
         GameObject ball;
-        float angleMath = 4;
+        float angleMath = 3;
         float angle_offset = 90 / angleMath;
         float angle = 225;
         Vector3 dir = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.right;
@@ -88,7 +88,7 @@ public class LevelEvents : MonoBehaviour
             ball = GameObject.Instantiate(GameObject.Find("dot"), obj1.transform.position,Quaternion.identity);
             ball.GetComponent<Rigidbody2D>().AddForce(dir * 100);
             dir = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.right;
-            Destroy(ball, 4);
+            Destroy(ball, 10);
         }
         angle = 225;
         yield return new WaitForSeconds(0.32f);
@@ -96,9 +96,9 @@ public class LevelEvents : MonoBehaviour
         {
             angle += angle_offset;
             ball = GameObject.Instantiate(GameObject.Find("dot"), obj2.transform.position, Quaternion.identity);
-            ball.GetComponent<Rigidbody2D>().AddForce(dir * 250);
+            ball.GetComponent<Rigidbody2D>().AddForce(dir * 100);
             dir = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.right;
-            Destroy(ball, 4);
+            Destroy(ball, 10);
         }
     }
     GameObject random_pos()

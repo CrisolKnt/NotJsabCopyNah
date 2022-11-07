@@ -288,7 +288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iframes: 0
-  dmgIframes: 1
+  dmgIframes: 0
   timer: {fileID: 0}
 --- !u!199 &27912915
 ParticleSystemRenderer:
@@ -5616,7 +5616,7 @@ RectTransform:
   m_Children:
   - {fileID: 685931367}
   m_Father: {fileID: 2065097062}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9659,7 +9659,7 @@ GameObject:
   - component: {fileID: 1101298681}
   m_Layer: 0
   m_Name: dot
-  m_TagString: enemy
+  m_TagString: dot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11874,11 +11874,11 @@ Animation:
   m_GameObject: {fileID: 1677024435}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 0}
+  m_Animation: {fileID: 7400000, guid: 0a31b6f07f1d30344b78ca4b8ff88579, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: 0a31b6f07f1d30344b78ca4b8ff88579, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!1 &1696233452
@@ -12260,6 +12260,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bbf5d0da42e12445804911c75ed8add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  value: 0
+  musicoffset: 0
 --- !u!114 &1836784784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12440,7 +12442,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2065097062}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1962437411
 AudioSource:
@@ -13249,8 +13251,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 135437066}
   - {fileID: 1962437410}
+  - {fileID: 135437066}
   - {fileID: 1166872460}
   - {fileID: 1194751144}
   - {fileID: 1385581091}

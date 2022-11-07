@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class timer_follow_player : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class timer_follow_player : MonoBehaviour
 
     private void Awake()
     {
+        Destroy(GameObject.Find("triangle_to_advance"), 0);
         pos = GameObject.Find("Player").transform;
         amount_to_go = endofloop - tutorial_music_player.musictime;
         division = amount_to_go;
