@@ -347,7 +347,7 @@ public class LevelEvents : MonoBehaviour
             shoot_bullet(random_pos());
 
             yield return new WaitUntil(() => time >= 22.5f);
-            camera_movement(0, 5.1f);
+            camera_movement(0, 4.5f);
             big_attack_add_velocity();
 
             yield return new WaitUntil(() => time >= 22.65f);
@@ -376,7 +376,7 @@ public class LevelEvents : MonoBehaviour
 
 
             yield return new WaitUntil(() => time >= 25.95f);
-            camera_movement(0, 7);
+            camera_movement(0, 6);
             big_attack_add_velocity();
 
             yield return new WaitUntil(() => time >= 26.15f);
